@@ -1,0 +1,49 @@
+
+# Build
+bin/
+obj/
+
+# User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# EF Core
+Migrations/*Designer.cs
+Migrations/*.resx
+
+# Publish
+publish/
+
+# Secrets & Configuration
+appsettings.Development.json
+secrets.appsettings.Local.json
+
+# Test Results
+TestResults/
+
+# NuGet
+*.nupkg
+
+# Coverage
+coverage/
+
+
