@@ -1,4 +1,4 @@
-namespace ProjectManagement.Infrastrcture;
+namespace ProjectManagement.Infrastructure;
 
 public static class DependencyInjection
 {
