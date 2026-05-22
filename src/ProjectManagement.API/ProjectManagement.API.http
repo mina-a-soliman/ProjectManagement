@@ -1,6 +1,25 @@
-@ProjectManagement.API_HostAddress = http://localhost:5004
-
-GET {{ProjectManagement.API_HostAddress}}/weatherforecast/
+@baseUrl= http://localhost:5001
+@accessToken= 
+POST {{baseUrl}}/api/v1/Auth/register
 Accept: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZTBmZjFmYS03MWUxLTRhY2ItYjEyYS0yMGUwZmU4ODQ1ZmIiLCJlbWFpbCI6Im1pbmEuYWRtaW5AcHJvamVjdG1hbmFnZW1lbnQuY29tIiwianRpIjoiY2UxYjA0N2UtZjdiMC00OTY0LWFjODUtMmNkNmZlZjA2MmNhIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiJiZTBmZjFmYS03MWUxLTRhY2ItYjEyYS0yMGUwZmU4ODQ1ZmIiLCJVc2VySWQiOiJiZTBmZjFmYS03MWUxLTRhY2ItYjEyYS0yMGUwZmU4ODQ1ZmIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3OTQ3MzY0NiwiaXNzIjoiUHJvamVjdE1hbmFnZW1lbnQuQVBJIiwiYXVkIjoiUHJvamVjdE1hbmFnZW1lbnQuQ2xpZW50In0.O7OiHMCgdnm2Ynm1xJVFlrdCOXYytgWfugAbz7XjzEc
+Content-Type: application/json
 
-###
+{
+  "fullName": "string",
+  "email": "string",
+  "password": "string",
+  "confirmPassword": "string"
+}
+
+### Login
+POST {{baseUrl}}/api/v1/Auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "mina.admin@projectmanagement.com",
+  "password": "Admin@123456"
+}
+
+content
