@@ -105,6 +105,10 @@ dotnet ef database update --project ../ProjectManagement.Infrastructure/ProjectM
 ```
 *(Note: A custom database seeder runs automatically on API startup to ensure required roles and default configurations exist).*
 
+```text
+Email:    mina.admin@projectmanagement.com
+Password: Admin@123456
+```
 ### 4. Run the Application
 Start the API locally using the .NET CLI:
 
