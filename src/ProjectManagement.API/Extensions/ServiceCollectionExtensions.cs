@@ -15,6 +15,8 @@ public static class ServiceCollectionExtensions
     {
         services.AddSwaggerGen(options =>
         {
+            options.EnableAnnotations();
+
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Title = "Project Management API",
