@@ -124,7 +124,6 @@ When running in the Development environment, the API automatically serves a comp
 - You can authorize directly in Swagger by clicking the **Authorize** button and pasting your `Bearer <JWT_TOKEN>`.
 
 ### Postman Collection
-For deeper endpoint testing, a pre-configured Postman collection is highly recommended. You can easily import the Swagger `v1/swagger.json` definition directly into Postman to automatically generate all endpoint requests.
-
+https://documenter.getpostman.com/view/52467201/2sBXwjwZnx
 ---
 
