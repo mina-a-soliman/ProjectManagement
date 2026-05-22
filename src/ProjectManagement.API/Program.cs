@@ -1,6 +1,7 @@
 using ProjectManagement.API.Extensions;
 using ProjectManagement.Application;
 using ProjectManagement.Infrastructure;
+using ProjectManagement.Infrastructure.Seed;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +37,8 @@ app.MapControllers();
  app.MapControllers();
 
 
+// ── Seed Database ────────────────────────────────────────────────
+await DatabaseSeeder.SeedAsync(app.Services);
 if(app.Environment.IsDevelopment())
 {
     app.MapGet("/",async context =>
