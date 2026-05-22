@@ -7,18 +7,21 @@ using ProjectManagement.Infrastructure.Seed;
 var builder = WebApplication.CreateBuilder(args);
 
 
- #region 
- builder.Services
-    .AddApplication()
-    .AddInfrastructure(builder.Configuration)
-    .AddSwaggerServices();
-    
+#region 
+builder.Services
+   .AddApplication()
+   .AddInfrastructure(builder.Configuration)
+   .AddSwaggerServices()
+   .AddApiVersioningServices();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
- #endregion
+#endregion
 
 var app = builder.Build();
+// Using Custom Middlewares (Logging & ExceptionHandling)
+app.UseCustomMiddleware();
 
 if (app.Environment.IsDevelopment())
 {
@@ -34,14 +37,14 @@ app.UseAuthorization();
 app.MapControllers();
 
 // app.UseHttpsRedirection();
- app.MapControllers();
+app.MapControllers();
 
 
 // ── Seed Database ────────────────────────────────────────────────
 await DatabaseSeeder.SeedAsync(app.Services);
-if(app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
-    app.MapGet("/",async context =>
+    app.MapGet("/", async context =>
     {
         context.Response.Redirect("/swagger");
     });
