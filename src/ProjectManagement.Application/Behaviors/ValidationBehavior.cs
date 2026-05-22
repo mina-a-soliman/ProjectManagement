@@ -6,7 +6,7 @@ namespace ProjectManagement.Application.Behaviors;
 
 /// <summary>
 /// MediatR pipeline behavior that runs FluentValidation validators before handler execution.
-/// Returns a failure ApiResponse if validation fails, preventing the handler from executing.
+/// Returns a failure Result if validation fails, preventing the handler from executing.
 /// </summary>
 public sealed class ValidationBehavior<TRequest, TResponse>(
     IEnumerable<IValidator<TRequest>> validators) : IPipelineBehavior<TRequest, TResponse>
@@ -35,7 +35,7 @@ public sealed class ValidationBehavior<TRequest, TResponse>(
 
         var errors = failures.Select(f => f.ErrorMessage).ToList();
 
-        // Try to create a failure response if the response type is ApiResponse<T>
+        // Try to create a failure response if the response type is Result<T>
         var responseType = typeof(TResponse);
 
         if (responseType.IsGenericType &&
